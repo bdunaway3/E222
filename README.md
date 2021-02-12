@@ -1,7 +1,7 @@
 # learning OAS specification with cpu and os example
 This weeks lab you will be learning how to propelry use Open API specification or (OAS) from here on out. Following this specification will allow us to create a directory hierarchy of python files or modules that we can reference within a yaml file. This makes our applications super clean and readily transferable. 
 
-# Read about OAS 
+### Read about OAS 
 
 You are required to read about writing OAS definitions and the required reading can be found here:
 
