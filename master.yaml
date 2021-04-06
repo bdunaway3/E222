@@ -14,7 +14,7 @@ paths:
     get:
       tags:
         - predict
-      operationId: mypred.heartpred
+      operationId: python_dir.mypred.heartpred
       description: Returns results from data inputs
       parameters:
         - in: path
