@@ -34,10 +34,6 @@ paths:
       responses:
         '200':
           description: 'Prediction'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/CPU'
 servers:
   - url: 'http://localhost:8080/E222'
 components:
@@ -56,3 +52,12 @@ components:
       properties:
         model:
           type: string
+
+  /prediction/<filename>:
+    get:
+      tags:
+        - download file
+      operationId: python_dir.mypred.download
+      responses:
+        '405':
+          description: Invalid Input
