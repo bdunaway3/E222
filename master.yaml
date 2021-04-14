@@ -52,12 +52,3 @@ components:
       properties:
         model:
           type: string
-
-  /prediction/<filename>:
-    get:
-      tags:
-        - download file
-      operationId: python_dir.mypred.download
-      responses:
-        '405':
-          description: Invalid Input
