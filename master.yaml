@@ -34,6 +34,60 @@ paths:
       responses:
         '200':
           description: 'Prediction'
+
+  /filepred/<fn>:
+    get:
+      tags:
+        - predict
+      operationId: python_dir.mypred.fileread
+      description: Returns results from data inputs
+      responses:
+        '200':
+          description: 'Prediction'
+
+
+  /file/<filename>:
+    post:
+      tags:
+        - Upload
+      summary: Upload a file 
+      operationId: python_dir.file.upload
+      parameters:
+        - name: filename
+          in: query
+          description: filename to be uploaded 
+          required: true
+          schema:
+            type: string 
+      responses:
+        '405':
+          description: Invalid input
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+    get:
+      tags:
+        - Download
+      summary: Type into url-bar, instead of file name type sample.txt. A pre-formatted file will download
+      operationId: python_dir.file.download
+      responses:
+        '405':
+          description: Invalid input
+  /list:
+    get:
+      tags:
+        - List 
+      operationId: python_dir.file.list_files
+      description: Returns cpu information of the hosting server
+      responses:
+        '200':
+          description: 'CPU info, or add more text'
 servers:
   - url: 'http://localhost:8080/E222'
 components:
