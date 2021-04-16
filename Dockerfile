@@ -27,8 +27,8 @@ RUN pip install psutil
 
 #RUN git clone https://github.com/tbalson/cpu_test.git
 
-WORKDIR cpu_test/
-COPY . /cpu_test
+WORKDIR python_dir/
+COPY . /python_dir
 
 #RUN git pull
 
@@ -36,4 +36,4 @@ EXPOSE 8080
 
 RUN pip install -r requirements.txt
 
-CMD ["make", "start"]
+#CMD ["make", "start"]
